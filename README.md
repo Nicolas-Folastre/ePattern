@@ -33,8 +33,8 @@ Thus, a reconstruction of patterns as images is performed from registered data.
 The challenge is to draw the spots with a subbpixel accuracy at exact position in a (small) image, with the right intensity.
 
 ## Tips and useful hints
-- path in ImageJ doesn't like the spaces, replace them by "_"
+- Path in ImageJ doesn't like the spaces, replace them by "_"
 - Files format .bmp for images and .csv for tables, also .tif (32-bits) is used for maps accuracy
-- some of the scripts parse the scan dimensions in the folder's name as "(000y-000x)" 
+- Some of the scripts parse the scan dimensions in the folder's name as "(000y-000x)" 
 - In scan and images : x is wideness from left, y is height from top (ImageJ)
-- code works only for scans with 2<X<9999 and 1<Y<9999
+- Code works only for scans with 2<X<9999 and 1<Y<9999
