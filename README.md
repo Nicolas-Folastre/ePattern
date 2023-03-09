@@ -32,7 +32,7 @@ Image sequence is needed to compute the cross-correlation (template matching bet
 Thus, a reconstruction of patterns as images is performed from registered data.
 The challenge is to draw the spots with a subbpixel accuracy at exact position in a (small) image, with the right intensity.
 
-## TIPS
+## Tips and useful hints
 - path in ImageJ doesn't like the spaces, replace them by "_"
 - Files format .bmp for images and .csv for tables, also .tif (32-bits) is used for maps accuracy
 - some of the scripts parse the scan dimensions in the folder's name as "(000y-000x)" 
