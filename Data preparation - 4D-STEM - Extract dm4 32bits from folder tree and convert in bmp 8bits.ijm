@@ -7,23 +7,11 @@
  * set to a 500ms to avoid lags.
  */
 
-// Set max number  of folders to include
-	Dialog.create("Maximum Number of Folders");
-	Dialog.addNumber("MaxNumber of Folders", 1);
-	Dialog.addNumber("Console is cleared if t(iteration) >", 500, 0, 4, "ms");
-	Dialog.show();
-	umax=Dialog.getNumber()+1;
-	t3=Dialog.getNumber();
 
-//choose input data folder(s)
-inputDir = newArray(umax);
-for (u = 1; u < umax; u++) {
-	inputDir[u]= getDirectory("Choose input directory "+u);
-}
-
-//choose where ALL results directories will be written
-WorkDir = getDirectory("Choose MAIN OUTPUT directory "); //testing
-
+#@ File[] inputDir (label="select folders containing 'Hour00' directory, or root of the tree", style="both")
+#@ boolean checkbox (label="Allow control of mouse to clear console if it is filling too fast with error messages ?")
+#@ Integer (label="Console is cleared if the iteration last more than (ms) >", style="slider", min=50, max=5000, stepSize=50) t3
+if(checkbox == 1){t3=1000000000;} // no control of mouse will be triggered
 //Console placement message for automatic clearing (performance increased, not touch mouse while processing
 waitForUser("Place your Console Window in Top Left Corner of screen to avoid slowing down (> 80% !!) process");
 
@@ -35,13 +23,13 @@ for (u = 1; u < umax; u++) {
 suffix=".dm4";
 
 input=inputDir[u];
+WorkDir=File.getParent(input);
 
-//WorkDir= File.getParent(input);
-
-name = "randomstring";
+name = "";
 name = File.getName(input);
-output= File.makeDirectory(WorkDir+"\\"+name+"_8b_bmp");
-output=WorkDir+"\\"+name+"_8b_bmp";
+//output= File.makeDirectory(WorkDir+"\\"+name+"_8b_bmp");
+output= File.makeDirectory(WorkDir+File.separator+name+"_8b_bmp");
+output=WorkDir+File.separator+name+"_8b_bmp";
 
 
 print(output);
