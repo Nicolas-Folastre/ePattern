@@ -11,13 +11,13 @@
 #@ File[] inputDir (label="select folders containing 'Hour00' directory, or root of the tree", style="both")
 #@ boolean checkbox (label="Allow control of mouse to clear console if it is filling too fast with error messages ?")
 #@ Integer (label="Console is cleared if the iteration last more than (ms) >", style="slider", min=50, max=5000, stepSize=50) t3
-if(checkbox == 1){t3=1000000000;} // no control of mouse will be triggered
+if(checkbox == 0){t3=1000000000;} // no control of mouse will be triggered
 //Console placement message for automatic clearing (performance increased, not touch mouse while processing
 waitForUser("Place your Console Window in Top Left Corner of screen to avoid slowing down (> 80% !!) process");
 
-
+umax=inputDir.length;
 //loop for each folder
-for (u = 1; u < umax; u++) {
+for (u = 0; u < umax; u++) {
 
 // #@ File (label = "Input directory", style = "directory") input ;
 suffix=".dm4";
